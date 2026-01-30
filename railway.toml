@@ -1,0 +1,18 @@
+[build]
+# Use the production Dockerfile for Railway deployment
+dockerfilePath = "docker/Dockerfile"
+
+[deploy]
+# Number of replicas (Railway free tier supports 1)
+numReplicas = 1
+
+# Start command is already set in the Dockerfile ENTRYPOINT
+# startCommand = ""
+
+# Health check configuration
+healthcheckPath = "/api/app/about"
+healthcheckTimeout = 300
+
+# Restart policy
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10

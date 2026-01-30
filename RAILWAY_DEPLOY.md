@@ -29,7 +29,8 @@ Configure these environment variables in your Railway project settings:
 |----------|-------------|---------------|
 | `BASE_URL` | The full URL where Mealie will be accessible | `https://thebenzings.com` |
 | `ALLOW_SIGNUP` | Allow new user registration | `true` or `false` |
-| `PORT` | Port for the application (Railway sets this automatically) | `9000` |
+
+> **Note:** Railway automatically sets the `PORT` environment variable. Mealie listens on port 9000 by default, and Railway handles the port mapping automatically.
 
 ### Database Configuration
 
@@ -180,17 +181,18 @@ TZ=America/New_York
 ### Domain Not Working
 
 - Verify DNS records are correctly configured
-- Wait for DNS propagation (can take up to 48 hours)
+- Wait for DNS propagation (typically propagates within minutes, but can take up to 24 hours in rare cases)
 - Check Railway's domain verification status
 
-## Default Credentials
+## First-Time Setup
 
-On first launch, Mealie creates a default admin user:
-
-- **Email**: `changeme@example.com`
-- **Password**: `MyPassword`
-
-> ⚠️ **Important**: Change these credentials immediately after first login!
+> ⚠️ **SECURITY WARNING**: On first launch, Mealie creates a temporary admin account. You **MUST** complete the following immediately after deployment:
+>
+> 1. Access your Mealie instance at `https://thebenzings.com`
+> 2. Complete the initial setup wizard to create your admin account
+> 3. The temporary credentials will be replaced with your new secure credentials
+>
+> **Do NOT expose your deployment publicly until you have completed the initial setup.**
 
 ## Additional Resources
 
